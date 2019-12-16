@@ -28,6 +28,23 @@ export class PostsComponent  {
             this.posts.splice(0,0,post)
           })
       }
+      
+      updatePost(post) {
+        this.http.patch(this.url + '/' + post.id, JSON.stringify({isRead:true}))  // used to modify the few property of an object
+        //this.http.post(this.url,JSON.stringify(post))  //To modify the Entire object
+          .subscribe(response => {
+            console.log(response);
+            
+          })
+      }
+
+      deletePost(post) {
+        this.http.delete(this.url + '/' + post.id)
+          .subscribe(response => {
+            let index = this.posts.indexOf(post)
+            this.posts.splice(index, 1);
+          })
+      }
 
  
 
