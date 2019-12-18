@@ -41,7 +41,8 @@ import { PasswordValidationComponent } from './password-validation/password-vali
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+  
   ],
   providers: [
     CoursesService
